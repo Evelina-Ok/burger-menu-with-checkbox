@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REM vs EM difference and usage</title>
+
+    <style>
+      .btn {
+        padding: 1rem 3rem;
+        /*   padding: 1em 3em; */
+      }
+
+      .btn-small {
+        font-size: 0.5rem;
+      }
+      .btn-normal {
+        font-size: 1.25rem;
+      }
+      .btn-large {
+        font-size: 3rem;
+      }
+
+      .btn2 {
+        /* padding: 1rem 3rem; */
+        padding: 1em 3em;
+      }
+
+      .btn-small {
+        font-size: 0.5rem;
+      }
+      .btn-normal {
+        font-size: 1.25rem;
+      }
+      .btn-large {
+        font-size: 3rem;
+      }
+
+      /* =========================
+   GENERAL STYLES 
+   NOT RELATED TO THE TIP
+============================ */
+
+      .btn {
+        background: #ee6352;
+        color: white;
+        font-weight: 800;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn + .btn {
+        margin-left: 2rem;
+      }
+
+      .btn2 {
+        background: #ee6352;
+        color: white;
+        /*   text-transform: uppercase; */
+        font-weight: 800;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn2 + .btn2 {
+        margin-left: 2rem;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --clr-primary: #ee6352;
+        --clr-secondary: #d16e8d;
+        --clr-accent: #f7f7ff;
+        --clr-gradient: linear-gradient(
+          -90deg,
+          var(--clr-primary),
+          var(--clr-secondary)
+        );
+        --ff-title: bungee, sans-serif;
+        --ff-body: canada-type-gibson, sans-serif;
+        --fw-body: 300;
+        --fw-bold: 800;
+        --fw-title: 400;
+        --fw-number: 800;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: var(--ff-body);
+        font-weight: var(--fw-body);
+        font-size: 1.25rem;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:hover,
+      a:focus {
+        color: var(--clr-accent);
+      }
+
+      :focus {
+        outline: 5px solid var(--clr-accent);
+        outline-offset: 3px;
+      }
+
+      h1{
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 1em 0 2em;
+        margin: 0 0 5rem 0;
+        background: var(--clr-gradient);
+        position: relative;
+        z-index: 1000;
+      }
+      h1 span {
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      p {
+        text-align: justify;
+        padding: 0 2rem;
+      }
+    
+      .btn-rem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em 0 4em;
+      }
+
+      .btn-em {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      
+    </style>
+  </head>
+
+  <body>
+    <h1>REM vs EM
+        <br>
+        <span>difference and usage</span> </h1>
+  
+        <p>REM and EM are both scalable units. Their values are always relative to the value of something else.</p>
+        <p>1rem = 16px</p>
+        <p>REM unit is only relative to the document's root element, while the EM unit is only relative to the immediate parent of the targeted element.</p>
+        <p>Therefore, in latter button example, while using EM, the padding will grow in relation to the btn</p>
+        <p>This can be used to scale everything in proportion to the text value</p>
+
+    <div class="btn-rem">
+      <a class="btn btn-small" href="#">small</a>
+      <a class="btn" href="#">normal</a>
+      <a class="btn btn-large" href="#">large</a>
+    </div>
+
+    <div class="btn-em">
+        <a class="btn2 btn-small" href="#">small</a>
+        <a class="btn2" href="#">normal</a>
+        <a class="btn2 btn-large" href="#">large</a>
+      </div>
+  </body>
+</html>
